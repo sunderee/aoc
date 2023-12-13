@@ -21,4 +21,14 @@ Future<void> main(List<String> arguments) async {
   );
   print('Total square feet of wrapping paper to order: ${year2015Day2.$1}');
   print('Total feet of ribbon to order: ${year2015Day2.$2}');
+
+  print('\n--- 2015 DAY 3 ---');
+  final year2015Day3 = await Year2015Day03().let(
+    (it) async => (
+      await it.first(),
+      await it.second(),
+    ),
+  );
+  print('# of houses receiving at least 1 present part 1: ${year2015Day3.$1}');
+  print('# of houses receiving at least 1 present part 2: ${year2015Day3.$2}');
 }
