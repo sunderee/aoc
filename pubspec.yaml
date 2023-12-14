@@ -6,7 +6,9 @@ environment:
   sdk: ">=3.2.2"
 
 dependencies:
+  args: ^2.4.2
   collection: ^1.18.0
+  crypto: ^3.0.3
   dart_scope_functions: ^0.1.4
 
 dev_dependencies:

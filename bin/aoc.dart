@@ -1,34 +1,98 @@
+import 'dart:async';
+
 import 'package:aoc/aoc.dart';
-import 'package:dart_scope_functions/dart_scope_functions.dart';
+import 'package:args/args.dart';
+
+typedef _YearDay = ({int year, int day});
+typedef _YearDaySolution = ({FutureOr<Object> first, FutureOr<Object> second});
 
 Future<void> main(List<String> arguments) async {
-  print('--- 2015 DAY 1 ---');
-  final year2015Day1 = await Year2015Day01().let(
-    (it) async => (
-      await it.first(),
-      await it.second(),
-    ),
-  );
-  print('What floor does Santa end up in: ${year2015Day1.$1}');
-  print('At what character position is he in basement: ${year2015Day1.$2}');
+  final yearDay = _parseCLIArguments(arguments);
+  if (yearDay == null) {
+    return;
+  }
 
-  print('\n--- 2015 DAY 2 ---');
-  final year2015Day2 = await Year2015Day02().let(
-    (it) async => (
-      await it.first(),
-      await it.second(),
-    ),
-  );
-  print('Total square feet of wrapping paper to order: ${year2015Day2.$1}');
-  print('Total feet of ribbon to order: ${year2015Day2.$2}');
+  final yearDaySolution = _mapOfSolutions[yearDay];
+  if (yearDaySolution == null) {
+    print(
+      '\x1B[31mNo solution exists for year ${yearDay.year} and day ${yearDay.day}\x1B[0m',
+    );
+    return;
+  }
 
-  print('\n--- 2015 DAY 3 ---');
-  final year2015Day3 = await Year2015Day03().let(
-    (it) async => (
-      await it.first(),
-      await it.second(),
-    ),
+  final (part1, part2) = (
+    await yearDaySolution.first,
+    await yearDaySolution.second,
   );
-  print('# of houses receiving at least 1 present part 1: ${year2015Day3.$1}');
-  print('# of houses receiving at least 1 present part 2: ${year2015Day3.$2}');
+  print('Part 1: $part1');
+  print('Part 2: $part2');
+}
+
+Map<_YearDay, _YearDaySolution> _mapOfSolutions = {
+  (year: 2015, day: 1): (
+    first: Year2015Day01().first(),
+    second: Year2015Day01().second(),
+  ),
+  (year: 2015, day: 2): (
+    first: Year2015Day02().first(),
+    second: Year2015Day02().second(),
+  ),
+  (year: 2015, day: 3): (
+    first: Year2015Day03().first(),
+    second: Year2015Day03().second(),
+  ),
+  (year: 2015, day: 4): (
+    first: Year2015Day04().first(),
+    second: Year2015Day04().second(),
+  ),
+};
+
+_YearDay? _parseCLIArguments(List<String> arguments) {
+  final parser = ArgParser()
+    ..addOption(
+      'year',
+      abbr: 'y',
+      help: 'Year (2015 - 2022).',
+      valueHelp: 'year',
+    )
+    ..addOption(
+      'day',
+      abbr: 'd',
+      help: 'Day (1 - 25).',
+      valueHelp: 'day',
+    )
+    ..addFlag(
+      'help',
+      abbr: 'h',
+      negatable: false,
+      help: 'Display this help information.',
+    );
+
+  try {
+    final argResults = parser.parse(arguments);
+    if (argResults['help'] == true) {
+      print('Usage: aoc [options]');
+      print(parser.usage);
+      return null;
+    }
+
+    var year = int.tryParse(argResults['year'] as String? ?? '');
+    var day = int.tryParse(argResults['day'] as String? ?? '');
+
+    if (year == null ||
+        year < 2015 ||
+        year > 2023 ||
+        day == null ||
+        day < 1 ||
+        day > 25) {
+      print('\x1B[31mInvalid input. Please check your input.\x1B[0m');
+      return null;
+    }
+
+    return (year: year, day: day);
+  } catch (_) {
+    print('\x1B[31mInvalid input. Please check your input.\x1B[0m');
+  }
+
+  return null;
 }
