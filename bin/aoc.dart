@@ -49,6 +49,10 @@ Map<_YearDay, _YearDaySolution> _mapOfSolutions = {
     first: Year2015Day05().first(),
     second: Year2015Day05().second(),
   ),
+  (year: 2015, day: 6): (
+    first: Year2015Day06().first(),
+    second: Year2015Day06().second(),
+  ),
 };
 
 _YearDay? _parseCLIArguments(List<String> arguments) {
