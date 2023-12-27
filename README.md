@@ -1,4 +1,4 @@
-# Advent of Code 2015 - 2021
+# Advent of Code - Dart
 
 In this repository, I'm collecting solutions to Advent of Code problems from the years where I haven't actively participated. This repository's main purpose is for me to go through old problems, enjoy the storytelling, and have fun solving them in Dart. Secondary purpose is, of course, educational.
 
