@@ -71,4 +71,18 @@ void main() {
       expect(result, equals(0));
     });
   });
+
+  group('2015 day 6', () {
+    final solution = Year2015Day06();
+
+    test('part 1', () async {
+      final result = await solution.first(isTest: true);
+      expect(result, equals(998996));
+    });
+
+    test('part 2', () async {
+      final result = await solution.second(isTest: true);
+      expect(result, equals(1001996));
+    });
+  });
 }

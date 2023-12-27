@@ -71,11 +71,11 @@ def main():
         print(f"  final solution = Year{year}Day{day_formatted}();\n")
         print("  test('part 1', () async {")
         print("    final result = await solution.first(isTest: true);")
-        print("    expect(result, equals(2));")
+        print("    expect(result, equals(-1));")
         print("  });\n")
         print("  test('part 2', () async {")
         print("    final result = await solution.second(isTest: true);")
-        print("    expect(result, equals(0));")
+        print("    expect(result, equals(-1));")
         print("  });")
         print("});")
     else:
