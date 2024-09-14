@@ -1,5 +1,5 @@
 name: aoc
-description: "Solutions to Advent of Code problems"
+description: "Solutions to Advent of Code problems in Dart"
 version: 0.0.1
 
 environment:
