@@ -1,6 +1,6 @@
 import 'package:aoc/solution.dart';
 
-final class Year2015Day01 extends Solution<int, int> {
+final class Year2015Day01 implements Solution<int, int> {
   @override
   int first(String input) {
     return input
