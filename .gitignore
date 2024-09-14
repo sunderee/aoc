@@ -1,0 +1,10 @@
+# IDEs
+.idea
+.vscode
+
+# Packages
+.dart_tool/
+pubspec.lock
+
+# Data
+**/*.txt
