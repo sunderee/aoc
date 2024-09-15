@@ -117,11 +117,9 @@ def update_data_file(year, day):
     day_key = day
     data_path = f"data/{year}/{day}.txt"
 
-    # Read the existing data.dart file
     with open(data_file, 'r') as file:
         lines = file.readlines()
 
-    # Find the index of the line containing the year entry
     year_start_index = None
     year_end_index = None
     for i, line in enumerate(lines):
@@ -132,7 +130,6 @@ def update_data_file(year, day):
             break
 
     if year_start_index is not None and year_end_index is not None:
-        # Year exists, check if day exists
         day_exists = False
         for line in lines[year_start_index+1:year_end_index]:
             if f"{day_key}: '{data_path}'," in line:
@@ -140,24 +137,21 @@ def update_data_file(year, day):
                 break
 
         if not day_exists:
-            # Day doesn't exist, insert the day entry
             day_entry = f"    {day_key}: '{data_path}',\n"
             lines.insert(year_end_index, day_entry)
             print(f"Added Day {day} to Year {year} in {data_file}")
         else:
             print(f"Data for Year {year}, Day {day} already exists in {data_file}. No update needed.")
     else:
-        # Year doesn't exist, add the year and day entry
         year_entry = [
             f"  {year_key}: {{\n",
             f"    {day_key}: '{data_path}',\n",
             "  },\n"
         ]
-        lines.insert(-1, "\n")  # Add a newline before the new year entry
+        lines.insert(-1, "\n")
         lines.extend(year_entry)
         print(f"Added Year {year} with Day {day} to {data_file}")
 
-    # Write the updated content back to the data.dart file
     with open(data_file, 'w') as file:
         file.writelines(lines)
 
