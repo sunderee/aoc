@@ -2,7 +2,7 @@ import 'package:aoc/year_2015/year_2015_day_05.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('Year 2015, day 4', () {
+  group('Year 2015, day 5', () {
     final solution = Year2015Day05();
 
     test('first', () {
