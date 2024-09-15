@@ -111,6 +111,56 @@ final Map<int, Solution> year{year}Solutions = {{
             year_file.write(content)
         print(f"Updated {bin_year_file}")
 
+def update_data_file(year, day):
+    data_file = "bin/data.dart"
+    year_key = year
+    day_key = day
+    data_path = f"data/{year}/{day}.txt"
+
+    # Read the existing data.dart file
+    with open(data_file, 'r') as file:
+        lines = file.readlines()
+
+    # Find the index of the line containing the year entry
+    year_start_index = None
+    year_end_index = None
+    for i, line in enumerate(lines):
+        if f"{year_key}: {{" in line:
+            year_start_index = i
+        if year_start_index is not None and "}," in line:
+            year_end_index = i
+            break
+
+    if year_start_index is not None and year_end_index is not None:
+        # Year exists, check if day exists
+        day_exists = False
+        for line in lines[year_start_index+1:year_end_index]:
+            if f"{day_key}: '{data_path}'," in line:
+                day_exists = True
+                break
+
+        if not day_exists:
+            # Day doesn't exist, insert the day entry
+            day_entry = f"    {day_key}: '{data_path}',\n"
+            lines.insert(year_end_index, day_entry)
+            print(f"Added Day {day} to Year {year} in {data_file}")
+        else:
+            print(f"Data for Year {year}, Day {day} already exists in {data_file}. No update needed.")
+    else:
+        # Year doesn't exist, add the year and day entry
+        year_entry = [
+            f"  {year_key}: {{\n",
+            f"    {day_key}: '{data_path}',\n",
+            "  },\n"
+        ]
+        lines.insert(-1, "\n")  # Add a newline before the new year entry
+        lines.extend(year_entry)
+        print(f"Added Year {year} with Day {day} to {data_file}")
+
+    # Write the updated content back to the data.dart file
+    with open(data_file, 'w') as file:
+        file.writelines(lines)
+
 def run_dart_formatter():
     try:
         subprocess.run(['dart', 'format', '.'], check=True)
@@ -127,6 +177,8 @@ def main():
     create_test_file(year, day)
     create_data_file(year, day)
     update_year_file(year, day)
+    update_data_file(year, day)
+    run_dart_formatter()
 
 if __name__ == "__main__":
     main()
