@@ -30,8 +30,9 @@ Future<void> main(List<String> arguments) async {
     final second = solution.second(input);
     print('$year $day first: $first');
     print('$year $day second: $second');
-  } catch (e) {
-    print(e);
+  } catch (error, stackTrace) {
+    print(error);
+    print(stackTrace);
     _printUsage(argParser);
   }
 }
