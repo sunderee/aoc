@@ -26,8 +26,8 @@ Future<void> main(List<String> arguments) async {
     }
 
     final input = await File(inputData[year]?[day] as String).readAsString();
-    final first = solution.first(input);
-    final second = solution.second(input);
+    final first = await solution.first(input);
+    final second = await solution.second(input);
     print('$year $day first: $first');
     print('$year $day second: $second');
   } catch (error, stackTrace) {

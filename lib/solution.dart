@@ -1,4 +1,6 @@
+import 'dart:async';
+
 abstract interface class Solution<F extends Object, S extends Object> {
-  F first(String input);
-  S second(String input);
+  FutureOr<F> first(String input);
+  FutureOr<S> second(String input);
 }

@@ -1,4 +1,3 @@
-import 'package:aoc/year_2015/year_2015_day_07.dart';
 import 'package:aoc/solution.dart';
 import 'package:aoc/year_2015/year_2015_day_01.dart';
 import 'package:aoc/year_2015/year_2015_day_02.dart';
@@ -6,6 +5,7 @@ import 'package:aoc/year_2015/year_2015_day_03.dart';
 import 'package:aoc/year_2015/year_2015_day_04.dart';
 import 'package:aoc/year_2015/year_2015_day_05.dart';
 import 'package:aoc/year_2015/year_2015_day_06.dart';
+import 'package:aoc/year_2015/year_2015_day_07.dart';
 
 final Map<int, Solution> year2025Solutions = {
   1: Year2015Day01(),
