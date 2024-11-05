@@ -9,4 +9,7 @@ final Map<int, Map<int, String>> inputData = {
     7: 'data/2015/7.txt',
     8: 'data/2015/8.txt',
   },
+  2016: {
+    1: 'data/2016/1.txt',
+  },
 };

@@ -1,8 +1,7 @@
 import 'package:aoc/solution.dart';
 import 'package:aoc/utilities/scope_functions.dart';
+import 'package:aoc/utilities/types.dart';
 import 'package:collection/collection.dart';
-
-typedef Dimensions = ({int length, int width, int height});
 
 final class Year2015Day02 implements Solution<int, int> {
   @override
