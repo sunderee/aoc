@@ -1,7 +1,3 @@
-/// Kotlin-inspired scope functions implemented in Dart with the goal of
-/// executing a block of code within the context of an object.
-library dart_scope_functions;
-
 /// Extensions that can be used on any type [T].
 extension ScopeFunctionExt<T> on T {
   /// Calls the specified function [block] with this value as its argument and

@@ -27,11 +27,12 @@ analyzer:
     # avoid_field_initializers_in_const_classes: error
     # avoid_final_parameters: error
     avoid_function_literals_in_foreach_calls: error
+    # avoid_futureor_void: error
     # avoid_implementing_value_types: error
     avoid_init_to_null: error
     # avoid_js_rounded_ints: error
     # avoid_multiple_declarations_per_line: error
-    avoid_null_checks_in_equality_operators: error
+    # avoid_null_checks_in_equality_operators: error
     # avoid_positional_boolean_parameters: error
     # avoid_print: error
     # avoid_private_typedef_functions: error
@@ -87,7 +88,7 @@ analyzer:
     implicit_call_tearoffs: error
     # implicit_reopen: error
     # invalid_case_patterns: error
-    # invalid_runtime_check_with_js_interop_types: error
+    invalid_runtime_check_with_js_interop_types: error
     # join_return_with_assignment: error
     # leading_newlines_in_multiline_strings: error
     library_annotations: error
@@ -114,6 +115,7 @@ analyzer:
     null_check_on_nullable_type_parameter: error
     null_closures: error
     # omit_local_variable_types: error
+    # omit_obvious_local_variable_types: error
     # one_member_abstracts: error
     # only_throw_errors: error
     overridden_fields: error
@@ -135,8 +137,8 @@ analyzer:
     # prefer_double_quotes: error
     # prefer_expression_function_bodies: error
     prefer_final_fields: error
-    prefer_final_in_for_each: error
-    prefer_final_locals: error
+    # prefer_final_in_for_each: error
+    # prefer_final_locals: error
     # prefer_final_parameters: error
     prefer_for_elements_to_map_fromIterable: error
     # prefer_foreach: error
@@ -172,6 +174,7 @@ analyzer:
     # sort_constructors_first: error
     # sort_pub_dependencies: error
     # sort_unnamed_constructors_first: error
+    # specify_nonobvious_local_variable_types: error
     # test_types_in_equals: error
     # throw_in_finally: error
     # tighten_type_of_initializing_formals: error
@@ -179,7 +182,7 @@ analyzer:
     type_init_formals: error
     type_literal_in_constant_pattern: error
     # unawaited_futures: error
-    # unintended_html_in_doc_comment: error
+    unintended_html_in_doc_comment: error
     # unnecessary_await_in_return: error
     unnecessary_brace_in_string_interps: error
     # unnecessary_breaks: error
@@ -190,7 +193,7 @@ analyzer:
     # unnecessary_lambdas: error
     unnecessary_late: error
     # unnecessary_library_directive: error
-    # unnecessary_library_name: error
+    unnecessary_library_name: error
     unnecessary_new: error
     unnecessary_null_aware_assignments: error
     # unnecessary_null_aware_operator_on_extension_on_nullable: error
@@ -207,7 +210,6 @@ analyzer:
     unnecessary_to_list_in_spreads: error
     # unreachable_from_main: error
     unrelated_type_equality_checks: error
-    # unsafe_html: error
     # use_build_context_synchronously: error
     # use_colored_box: error
     # use_decorated_box: error
@@ -227,6 +229,7 @@ analyzer:
     use_super_parameters: error
     # use_test_throws_matchers: error
     # use_to_and_as_if_applicable: error
+    # use_truncating_division: error
     valid_regexps: error
     void_checks: error
 
@@ -292,6 +295,9 @@ linter:
     # Avoid using `forEach` with a function literal.
     - avoid_function_literals_in_foreach_calls
 
+    # Avoid using 'FutureOr<void>' as the type of a result.
+    # - avoid_futureor_void
+
     # Don't implement classes that override `==`.
     # - avoid_implementing_value_types
 
@@ -305,7 +311,7 @@ linter:
     # - avoid_multiple_declarations_per_line
 
     # Don't check for `null` in custom `==` operators.
-    - avoid_null_checks_in_equality_operators
+    # - avoid_null_checks_in_equality_operators
 
     # Avoid positional boolean parameters.
     # - avoid_positional_boolean_parameters
@@ -473,7 +479,7 @@ linter:
     # - invalid_case_patterns
 
     # Avoid runtime type tests with JS interop types where the result may not be platform-consistent.
-    # - invalid_runtime_check_with_js_interop_types
+    - invalid_runtime_check_with_js_interop_types
 
     # Join return statement with assignment when possible.
     # - join_return_with_assignment
@@ -523,7 +529,7 @@ linter:
     # Avoid leading underscores for local identifiers.
     - no_leading_underscores_for_local_identifiers
 
-    # Don't compare Boolean expressions to Boolean literals.
+    # Don't compare boolean expressions to boolean literals.
     # - no_literal_bool_comparisons
 
     # Don't put any logic in createState.
@@ -552,6 +558,9 @@ linter:
 
     # Omit type annotations for local variables.
     # - omit_local_variable_types
+
+    # Omit obvious type annotations for local variables.
+    # - omit_obvious_local_variable_types
 
     # Avoid defining a one-member abstract class when a simple function will do.
     # - one_member_abstracts
@@ -617,10 +626,10 @@ linter:
     - prefer_final_fields
 
     # Prefer final in for-each loop variable if reference is not reassigned.
-    - prefer_final_in_for_each
+    # - prefer_final_in_for_each
 
     # Prefer final for variable declarations if they are not reassigned.
-    - prefer_final_locals
+    # - prefer_final_locals
 
     # Prefer final for parameter declarations if they are not reassigned.
     # - prefer_final_parameters
@@ -727,6 +736,9 @@ linter:
     # Sort unnamed constructor declarations first.
     # - sort_unnamed_constructors_first
 
+    # Specify non-obvious type annotations for local variables.
+    # - specify_nonobvious_local_variable_types
+
     # Test type of argument in `operator ==(Object other)`.
     # - test_types_in_equals
 
@@ -749,7 +761,7 @@ linter:
     # - unawaited_futures
 
     # Use of angle brackets in a doc comment is treated as HTML by Markdown.
-    # - unintended_html_in_doc_comment
+    - unintended_html_in_doc_comment
 
     # Unnecessary `await` keyword in return.
     # - unnecessary_await_in_return
@@ -782,7 +794,7 @@ linter:
     # - unnecessary_library_directive
 
     # Don't have a library name in a `library` declaration.
-    # - unnecessary_library_name
+    - unnecessary_library_name
 
     # Unnecessary new keyword.
     - unnecessary_new
@@ -831,9 +843,6 @@ linter:
 
     # Equality operator `==` invocation with references of unrelated types.
     - unrelated_type_equality_checks
-
-    # Avoid unsafe HTML APIs.
-    # - unsafe_html
 
     # Do not use `BuildContext` across asynchronous gaps.
     # - use_build_context_synchronously
@@ -891,6 +900,9 @@ linter:
 
     # Start the name of the method with to/_to or as/_as if applicable.
     # - use_to_and_as_if_applicable
+
+    # Use truncating division.
+    # - use_truncating_division
 
     # Use valid regular expression syntax.
     - valid_regexps
