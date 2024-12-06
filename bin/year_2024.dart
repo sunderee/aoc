@@ -1,3 +1,4 @@
+import 'package:aoc/year_2024/year_2024_day_06.dart';
 import 'package:aoc/year_2024/year_2024_day_05.dart';
 import 'package:aoc/year_2024/year_2024_day_04.dart';
 import 'package:aoc/year_2024/year_2024_day_03.dart';
@@ -11,4 +12,5 @@ final Map<int, Solution> year2024Solutions = {
   3: Year2024Day03(),
   4: Year2024Day04(),
   5: Year2024Day05(),
+  6: Year2024Day06(),
 };
