@@ -19,10 +19,23 @@ final class Year2024Day07 implements Solution<int, int> {
 
   @override
   int second(String input) {
-    return -1;
+    final lines = input.split('\n');
+
+    int totalSumOfSolvableEquations = 0;
+    for (final line in lines) {
+      final (solvable, result) = _canItBeSolved(line, withConcatenation: true);
+      if (solvable) {
+        totalSumOfSolvableEquations += result;
+      }
+    }
+
+    return totalSumOfSolvableEquations;
   }
 
-  (bool, int) _canItBeSolved(String line) {
+  (bool, int) _canItBeSolved(
+    String line, {
+    bool withConcatenation = false,
+  }) {
     final result = RegExp(r'^\d+(?=\:)', multiLine: true)
         .stringMatch(line)
         ?.let((it) => int.parse(it));
@@ -36,8 +49,16 @@ final class Year2024Day07 implements Solution<int, int> {
       return (false, -1);
     }
 
-    for (var sequence in _generateSequences(combinations.length)) {
-      if (_evaluateSequence(combinations, sequence, result)) {
+    for (final sequence in _generateSequences(
+      combinations.length,
+      withConcatenation: withConcatenation,
+    )) {
+      if (_evaluateSequence(
+        combinations,
+        sequence,
+        result,
+        withConcatenation: withConcatenation,
+      )) {
         return (true, result);
       }
     }
@@ -45,8 +66,11 @@ final class Year2024Day07 implements Solution<int, int> {
     return (false, -1);
   }
 
-  List<List<String>> _generateSequences(int length) {
-    final operations = ['+', '*'];
+  List<List<String>> _generateSequences(
+    int length, {
+    bool withConcatenation = false,
+  }) {
+    final operations = withConcatenation ? ['+', '*', '||'] : ['+', '*'];
     final sequences = <List<String>>[];
 
     void generateCombinations(List<String> current) {
@@ -55,8 +79,8 @@ final class Year2024Day07 implements Solution<int, int> {
         return;
       }
 
-      for (var op in operations) {
-        current.add(op);
+      for (final operation in operations) {
+        current.add(operation);
         generateCombinations(current);
         current.removeLast();
       }
@@ -69,18 +93,38 @@ final class Year2024Day07 implements Solution<int, int> {
   bool _evaluateSequence(
     List<int> numbers,
     List<String> operations,
-    int target,
-  ) {
+    int target, {
+    bool withConcatenation = false,
+  }) {
     double result = numbers[0].toDouble();
 
     for (int i = 0; i < operations.length; i++) {
-      if (operations[i] == '+') {
-        result += numbers[i + 1];
-      } else if (operations[i] == '*') {
-        result *= numbers[i + 1];
+      if (withConcatenation) {
+        switch (operations[i]) {
+          case '+':
+            result += numbers[i + 1];
+            break;
+          case '*':
+            result *= numbers[i + 1];
+            break;
+          case '||':
+            result = _concatenate(result.toInt(), numbers[i + 1]).toDouble();
+            break;
+        }
+      } else {
+        switch (operations[i]) {
+          case '+':
+            result += numbers[i + 1];
+            break;
+          case '*':
+            result *= numbers[i + 1];
+            break;
+        }
       }
     }
 
     return result == target;
   }
+
+  int _concatenate(int a, int b) => int.parse('$a$b');
 }

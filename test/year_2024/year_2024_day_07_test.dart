@@ -21,7 +21,7 @@ void main() {
     });
 
     test('second', () {
-      expect(solution.second(input), equals(-1));
+      expect(solution.second(input), equals(11387));
     });
   });
 }
