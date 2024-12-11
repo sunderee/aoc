@@ -39,6 +39,7 @@ final class Year2024Day11 implements Solution<int, int> {
     return stones.length;
   }
 
+  // Inspired by https://github.com/imisaacwu/AdventOfCode2024/blob/main/day11.dart
   @override
   int second(String input) {
     final stones = input.split(' ').map(int.parse).toList();
