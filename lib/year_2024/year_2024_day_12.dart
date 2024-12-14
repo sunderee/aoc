@@ -1,5 +1,4 @@
 import 'dart:collection';
-import 'dart:math';
 
 import 'package:aoc/solution.dart';
 import 'package:aoc/utilities/types.dart';
@@ -114,11 +113,6 @@ final class Year2024Day12 implements Solution<int, int> {
 
   int _calculateBulkPrice(Region region, List<List<String>> grid) {
     int perimeter = 0;
-
-    int minX = region.region.map((item) => item.x).reduce(min);
-    int maxX = region.region.map((item) => item.x).reduce(max);
-    int minY = region.region.map((item) => item.y).reduce(min);
-    int maxY = region.region.map((item) => item.y).reduce(max);
 
     for (Point point in region.region) {
       bool left = !region.region.contains((x: point.x - 1, y: point.y));
