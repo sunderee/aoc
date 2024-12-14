@@ -909,4 +909,3 @@ linter:
 
     # Don't assign to `void`.
     - void_checks
-

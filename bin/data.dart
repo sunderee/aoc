@@ -29,5 +29,6 @@ final Map<int, Map<int, String>> inputData = {
     11: 'data/2024/11.txt',
     12: 'data/2024/12.txt',
     13: 'data/2024/13.txt',
+    14: 'data/2024/14.txt',
   },
 };

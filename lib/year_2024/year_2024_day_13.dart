@@ -56,8 +56,8 @@ final class Year2024Day13 implements Solution<int, int> {
     );
 
     if (isPart2) {
-      prizeX += 10_000_000_000_000;
-      prizeY += 10_000_000_000_000;
+      prizeX += 10000000000000;
+      prizeY += 10000000000000;
     }
 
     final y = (prizeY * buttonAX - prizeX * buttonAY) /
