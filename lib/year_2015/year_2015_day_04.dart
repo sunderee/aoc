@@ -5,7 +5,7 @@ import 'package:crypto/crypto.dart';
 
 final class Year2015Day04 implements Solution<int, int> {
   @override
-  int first(String input) {
+  int first(String input, {bool inTestMode = false}) {
     var currentNumber = 0;
     bool found = false;
     while (!found) {
@@ -21,7 +21,7 @@ final class Year2015Day04 implements Solution<int, int> {
   }
 
   @override
-  int second(String input) {
+  int second(String input, {bool inTestMode = false}) {
     var currentNumber = 0;
     bool found = false;
     while (!found) {

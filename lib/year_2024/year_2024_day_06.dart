@@ -5,7 +5,7 @@ final class Year2024Day06 implements Solution<int, int> {
   static final _directions = [(0, -1), (1, 0), (0, 1), (-1, 0)];
 
   @override
-  int first(String input) {
+  int first(String input, {bool inTestMode = false}) {
     final positionsGrid =
         input.split('\n').map((item) => item.split('')).toList();
 
@@ -51,7 +51,7 @@ final class Year2024Day06 implements Solution<int, int> {
   }
 
   @override
-  int second(String input) {
+  int second(String input, {bool inTestMode = false}) {
     final positionsGrid =
         input.split('\n').map((item) => item.split('')).toList();
 

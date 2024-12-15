@@ -40,7 +40,7 @@ class Year2024Day04 implements Solution<int, int> {
   ];
 
   @override
-  int first(String input) {
+  int first(String input, {bool inTestMode = false}) {
     List<String> data = input.split('\n');
     return _solve(
       data,
@@ -50,7 +50,7 @@ class Year2024Day04 implements Solution<int, int> {
   }
 
   @override
-  int second(String input) {
+  int second(String input, {bool inTestMode = false}) {
     List<String> data = input.split('\n');
     return _solve(
       data,

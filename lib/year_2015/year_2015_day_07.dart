@@ -2,7 +2,7 @@ import 'package:aoc/solution.dart';
 
 final class Year2015Day07 implements Solution<int, int> {
   @override
-  int first(String input) {
+  int first(String input, {bool inTestMode = false}) {
     final inputLines = input.split('\n');
     final circuit = <String, String>{};
     final values = <String, int>{};
@@ -76,7 +76,7 @@ final class Year2015Day07 implements Solution<int, int> {
   }
 
   @override
-  int second(String input) {
+  int second(String input, {bool inTestMode = false}) {
     final inputLines = input.split('\n');
     final circuit = <String, String>{};
     final values = <String, int>{};

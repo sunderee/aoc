@@ -6,7 +6,7 @@ import 'package:aoc/utilities/types.dart';
 
 final class Year2016Day01 implements Solution<int, int> {
   @override
-  int first(String input) {
+  int first(String input, {bool inTestMode = false}) {
     const startingPoint = (x: 0, y: 0);
     var lastVisitedPoint = (x: 0, y: 0);
     var direction = Direction.north;
@@ -50,7 +50,7 @@ final class Year2016Day01 implements Solution<int, int> {
   }
 
   @override
-  int second(String input) {
+  int second(String input, {bool inTestMode = false}) {
     const startingPoint = (x: 0, y: 0);
     final visitedPoints = <Point>{startingPoint};
 

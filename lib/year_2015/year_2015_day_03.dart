@@ -4,7 +4,7 @@ import 'package:aoc/solution.dart';
 
 final class Year2015Day03 implements Solution<int, int> {
   @override
-  int first(String input) {
+  int first(String input, {bool inTestMode = false}) {
     var currentPosition = const Point(0, 0);
     final Set<Point<int>> visitedHousesGrid = {currentPosition};
 
@@ -25,7 +25,7 @@ final class Year2015Day03 implements Solution<int, int> {
   }
 
   @override
-  int second(String input) {
+  int second(String input, {bool inTestMode = false}) {
     var currentPositionSanta = const Point(0, 0);
     var currentPositionRobot = const Point(0, 0);
 
