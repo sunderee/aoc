@@ -4,14 +4,14 @@ import 'package:aoc/utilities/types.dart';
 
 final class Year2024Day14 implements Solution<int, int> {
   @override
-  int first(String input, {bool inTestMode = false}) {
+  int first(String input) {
     final robots = input
         .split('\n')
         .map((item) => _parsePositionAndVelocity(item))
         .toList();
 
-    final gridWidth = inTestMode ? 11 : 101;
-    final gridHeight = inTestMode ? 7 : 103;
+    const gridWidth = 101;
+    const gridHeight = 103;
 
     final positions = List<Point>.from(robots.map((item) => item.$1));
 
@@ -34,8 +34,8 @@ final class Year2024Day14 implements Solution<int, int> {
       }
     }
 
-    final midX = gridWidth ~/ 2;
-    final midY = gridHeight ~/ 2;
+    const midX = gridWidth ~/ 2;
+    const midY = gridHeight ~/ 2;
 
     final quadrants = [0, 0, 0, 0];
 
@@ -64,7 +64,7 @@ final class Year2024Day14 implements Solution<int, int> {
 
   // Heavily inspired by: https://github.com/CodingAP/advent-of-code
   @override
-  int second(String input, {bool inTestMode = false}) {
+  int second(String input) {
     final robots = input
         .split('\n')
         .map((item) => _parsePositionAndVelocity(item))

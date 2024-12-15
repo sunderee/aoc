@@ -3,7 +3,7 @@ import 'package:aoc/solution.dart';
 // Heavily inspired by paolostyle.
 final class Year2024Day09 implements Solution<int, int> {
   @override
-  int first(String input, {bool inTestMode = false}) {
+  int first(String input) {
     final code = input.split('').map((item) => int.parse(item)).toList();
 
     int lengthOfCodeBlocks = 0;
@@ -50,7 +50,7 @@ final class Year2024Day09 implements Solution<int, int> {
   }
 
   @override
-  int second(String input, {bool inTestMode = false}) {
+  int second(String input) {
     final code = input.split('').map((item) => int.parse(item)).toList();
 
     int lengthOfCodeBlocks = 0;

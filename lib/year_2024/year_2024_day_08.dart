@@ -3,7 +3,7 @@ import 'package:aoc/utilities/types.dart';
 
 final class Year2024Day08 implements Solution<int, int> {
   @override
-  int first(String input, {bool inTestMode = false}) {
+  int first(String input) {
     final lines = input.split('\n');
     final antennas = <String, List<Point>>{};
     final antinodes = <Point>{};
@@ -43,7 +43,7 @@ final class Year2024Day08 implements Solution<int, int> {
   }
 
   @override
-  int second(String input, {bool inTestMode = false}) {
+  int second(String input) {
     final lines = input.split('\n');
     final antennas = <String, List<Point>>{};
     final antinodes = <Point>{};

@@ -3,7 +3,7 @@ import 'package:aoc/utilities/scope_functions.dart';
 
 final class Year2024Day01 implements Solution<int, int> {
   @override
-  int first(String input, {bool inTestMode = false}) {
+  int first(String input) {
     final leftList = <int>[];
     final rightList = <int>[];
     for (final line in input.split('\n')) {
@@ -33,7 +33,7 @@ final class Year2024Day01 implements Solution<int, int> {
   }
 
   @override
-  int second(String input, {bool inTestMode = false}) {
+  int second(String input) {
     final leftList = <int>[];
     final rightList = <int>[];
     for (final line in input.split('\n')) {

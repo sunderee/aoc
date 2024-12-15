@@ -5,7 +5,7 @@ import 'package:collection/collection.dart';
 
 final class Year2015Day02 implements Solution<int, int> {
   @override
-  int first(String input, {bool inTestMode = false}) {
+  int first(String input) {
     return input
         .split('\n')
         .map((item) => item.split('x').map((element) => int.parse(element)))
@@ -19,7 +19,7 @@ final class Year2015Day02 implements Solution<int, int> {
   }
 
   @override
-  int second(String input, {bool inTestMode = false}) {
+  int second(String input) {
     return input
         .split('\n')
         .map((item) => item.split('x').map((element) => int.parse(element)))

@@ -18,7 +18,7 @@ const List<List<String>> _hundredsManHoursKeypad = [
 
 final class Year2016Day02 implements Solution<String, String> {
   @override
-  String first(String input, {bool inTestMode = false}) {
+  String first(String input) {
     final codeDigits = <String>[];
     var currentPosition = const Point(1, 1);
     input.split('\n').forEach((line) {
@@ -36,7 +36,7 @@ final class Year2016Day02 implements Solution<String, String> {
   }
 
   @override
-  String second(String input, {bool inTestMode = false}) {
+  String second(String input) {
     final codeCharacters = <String>[];
     var currentPosition = const Point(0, 2);
     input.split('\n').forEach((line) {

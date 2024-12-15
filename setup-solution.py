@@ -21,12 +21,12 @@ def create_dart_file(year, day):
 
 final class {class_name} implements Solution<int, int> {{
   @override
-  int first(String input, {bool inTestMode = false}) {{
+  int first(String input) {{
     return -1;
   }}
 
   @override
-  int second(String input, {bool inTestMode = false}) {{
+  int second(String input) {{
     return -1;
   }}
 }}

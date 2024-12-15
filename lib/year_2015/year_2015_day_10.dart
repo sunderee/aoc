@@ -2,12 +2,10 @@ import 'package:aoc/solution.dart';
 
 final class Year2015Day10 implements Solution<int, int> {
   @override
-  int first(String input, {bool inTestMode = false}) =>
-      _lookAndSayResult(input, 40);
+  int first(String input) => _lookAndSayResult(input, 40);
 
   @override
-  int second(String input, {bool inTestMode = false}) =>
-      _lookAndSayResult(input, 50);
+  int second(String input) => _lookAndSayResult(input, 50);
 
   int _lookAndSayResult(String input, int numberOfRepetitions) {
     while (numberOfRepetitions > 0) {

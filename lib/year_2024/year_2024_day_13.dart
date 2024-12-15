@@ -3,14 +3,14 @@ import 'package:aoc/utilities/scope_functions.dart';
 
 final class Year2024Day13 implements Solution<int, int> {
   @override
-  int first(String input, {bool inTestMode = false}) => input
+  int first(String input) => input
       .split('\n\n')
       .map((item) => _costOfWinningAPrize(item))
       .where((item) => item != -1)
       .reduce((previous, current) => previous + current);
 
   @override
-  int second(String input, {bool inTestMode = false}) => input
+  int second(String input) => input
       .split('\n\n')
       .map((item) => _costOfWinningAPrize(item, isPart2: true))
       .where((item) => item != -1)

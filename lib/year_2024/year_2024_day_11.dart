@@ -4,7 +4,7 @@ import 'package:aoc/solution.dart';
 
 final class Year2024Day11 implements Solution<int, int> {
   @override
-  int first(String input, {bool inTestMode = false}) {
+  int first(String input) {
     List<int> stones = input.split(' ').map(int.parse).toList();
     int blinksLeft = 25;
 
@@ -41,7 +41,7 @@ final class Year2024Day11 implements Solution<int, int> {
 
   // Inspired by https://github.com/imisaacwu/AdventOfCode2024/blob/main/day11.dart
   @override
-  int second(String input, {bool inTestMode = false}) {
+  int second(String input) {
     final stones = input.split(' ').map(int.parse).toList();
 
     final Map<int, int> stoneCounts = {};

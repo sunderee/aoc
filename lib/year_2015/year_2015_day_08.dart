@@ -2,14 +2,14 @@ import 'package:aoc/solution.dart';
 
 final class Year2015Day08 implements Solution<int, int> {
   @override
-  int first(String input, {bool inTestMode = false}) => input
+  int first(String input) => input
       .split('\n')
       .map((item) => _calculateStringLengthDifference(item))
       .reduce((previous, current) => previous + current);
 
   // Inspired by https://www.reddit.com/r/adventofcode/comments/3vw32y/comment/cxrad1k
   @override
-  int second(String input, {bool inTestMode = false}) => input
+  int second(String input) => input
       .split('\n')
       .map((s) => 2 + s.split('\\').length - 1 + s.split('"').length - 1)
       .reduce((a, b) => a + b);

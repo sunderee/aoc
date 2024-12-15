@@ -21,7 +21,7 @@ typedef Instruction = ({int startX, int startY, int endX, int endY});
 
 final class Year2015Day06 implements Solution<int, int> {
   @override
-  int first(String input, {bool inTestMode = false}) {
+  int first(String input) {
     final List<List<bool>> grid = List.generate(
       1000,
       (_) => List.generate(1000, (_) => false),
@@ -52,7 +52,7 @@ final class Year2015Day06 implements Solution<int, int> {
   }
 
   @override
-  int second(String input, {bool inTestMode = false}) {
+  int second(String input) {
     final List<List<int>> grid = List.generate(
       1000,
       (_) => List.generate(1000, (_) => 0),

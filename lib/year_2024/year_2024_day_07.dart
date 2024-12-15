@@ -3,7 +3,7 @@ import 'package:aoc/utilities/scope_functions.dart';
 
 final class Year2024Day07 implements Solution<int, int> {
   @override
-  int first(String input, {bool inTestMode = false}) {
+  int first(String input) {
     final lines = input.split('\n');
 
     int totalSumOfSolvableEquations = 0;
@@ -18,7 +18,7 @@ final class Year2024Day07 implements Solution<int, int> {
   }
 
   @override
-  int second(String input, {bool inTestMode = false}) {
+  int second(String input) {
     final lines = input.split('\n');
 
     int totalSumOfSolvableEquations = 0;

@@ -3,19 +3,18 @@ import 'package:aoc/utilities/scope_functions.dart';
 
 final class Year2024Day03 implements Solution<int, int> {
   @override
-  int first(String input, {bool inTestMode = false}) =>
-      RegExp(r'mul\(\d+\,\d+\)')
-          .allMatches(input)
-          .map((item) => item.group(0)?.let((it) => (
-                RegExp(r'(?<=mul\()\d+').stringMatch(it),
-                RegExp(r'(?<=\,)\d+(?=\))').stringMatch(it)
-              )))
-          .whereType<(String, String)>()
-          .map((item) => int.parse(item.$1) * int.parse(item.$2))
-          .reduce((previous, current) => previous + current);
+  int first(String input) => RegExp(r'mul\(\d+\,\d+\)')
+      .allMatches(input)
+      .map((item) => item.group(0)?.let((it) => (
+            RegExp(r'(?<=mul\()\d+').stringMatch(it),
+            RegExp(r'(?<=\,)\d+(?=\))').stringMatch(it)
+          )))
+      .whereType<(String, String)>()
+      .map((item) => int.parse(item.$1) * int.parse(item.$2))
+      .reduce((previous, current) => previous + current);
 
   @override
-  int second(String input, {bool inTestMode = false}) {
+  int second(String input) {
     bool isEnabled = true;
     List<int> multiplicationResults = [];
 

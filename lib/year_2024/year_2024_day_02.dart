@@ -2,7 +2,7 @@ import 'package:aoc/solution.dart';
 
 final class Year2024Day02 implements Solution<int, int> {
   @override
-  int first(String input, {bool inTestMode = false}) => input
+  int first(String input) => input
       .split('\n')
       .map((item) => item.split(' ').map((element) => int.parse(element)))
       .map((item) => _isReportSafe(item))
@@ -10,7 +10,7 @@ final class Year2024Day02 implements Solution<int, int> {
       .length;
 
   @override
-  int second(String input, {bool inTestMode = false}) => input
+  int second(String input) => input
       .split('\n')
       .map((item) => item.split(' ').map((element) => int.parse(element)))
       .map((item) => _isReportSafeWithDampener(item))

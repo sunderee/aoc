@@ -4,7 +4,7 @@ import 'package:collection/collection.dart';
 
 final class Year2015Day09 implements Solution<int, int> {
   @override
-  int first(String input, {bool inTestMode = false}) {
+  int first(String input) {
     final graphOfDestinations = <String, Map<String, int>>{};
     for (final line in input.split('\n')) {
       final (source, destination, distance) = (
@@ -80,7 +80,7 @@ final class Year2015Day09 implements Solution<int, int> {
   }
 
   @override
-  int second(String input, {bool inTestMode = false}) {
+  int second(String input) {
     final graphOfDestinations = <String, Map<String, int>>{};
     for (final line in input.split('\n')) {
       final (source, destination, distance) = (

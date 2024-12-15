@@ -2,12 +2,12 @@ import 'package:aoc/solution.dart';
 
 final class Year2015Day05 implements Solution<int, int> {
   @override
-  int first(String input, {bool inTestMode = false}) {
+  int first(String input) {
     return input.split('\n').where(_niceString).length;
   }
 
   @override
-  int second(String input, {bool inTestMode = false}) {
+  int second(String input) {
     return input.split('\n').where(_betterNiceString).length;
   }
 

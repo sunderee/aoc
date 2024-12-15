@@ -7,7 +7,7 @@ typedef Region = ({String type, Set<Point> region});
 
 final class Year2024Day12 implements Solution<int, int> {
   @override
-  int first(String input, {bool inTestMode = false}) {
+  int first(String input) {
     final grid = input.split('\n').map((item) => item.split('')).toList();
     final visited = List.generate(
       grid.length,
@@ -30,7 +30,7 @@ final class Year2024Day12 implements Solution<int, int> {
   }
 
   @override
-  int second(String input, {bool inTestMode = false}) {
+  int second(String input) {
     final grid = input.split('\n').map((item) => item.split('')).toList();
     final visited = List.generate(
       grid.length,

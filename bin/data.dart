@@ -15,6 +15,9 @@ final Map<int, Map<int, String>> inputData = {
     1: 'data/2016/1.txt',
     2: 'data/2016/2.txt',
   },
+  2021: {
+    6: 'data/2021/6.txt',
+  },
   2024: {
     1: 'data/2024/1.txt',
     2: 'data/2024/2.txt',
@@ -30,5 +33,6 @@ final Map<int, Map<int, String>> inputData = {
     12: 'data/2024/12.txt',
     13: 'data/2024/13.txt',
     14: 'data/2024/14.txt',
+    15: 'data/2024/15.txt',
   },
 };

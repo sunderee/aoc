@@ -3,7 +3,7 @@ import 'package:aoc/utilities/types.dart';
 
 final class Year2024Day10 implements Solution<int, int> {
   @override
-  int first(String input, {bool inTestMode = false}) {
+  int first(String input) {
     int totalTrailheadScore = 0;
 
     final grid = input.split('\n').map((line) => line.split('')).toList();
@@ -20,7 +20,7 @@ final class Year2024Day10 implements Solution<int, int> {
   }
 
   @override
-  int second(String input, {bool inTestMode = false}) {
+  int second(String input) {
     int totalTrailheadRating = 0;
 
     final grid = input.split('\n').map((line) => line.split('')).toList();
