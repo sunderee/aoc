@@ -33,7 +33,7 @@ void main() {
     });
 
     test('second', () {
-      expect(solution.second(''), equals(-1));
+      expect(solution.second(input), equals(9021));
     });
   });
 }
